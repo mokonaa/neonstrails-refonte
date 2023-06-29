@@ -1,0 +1,45 @@
+@use "../functions/breakpoints" as *;
+
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    color: rgb(190, 190, 190);
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    /* overlay */
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)),
+    repeating-linear-gradient(180deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 5px,
+        rgba(0, 0, 0, 0.15) 7px,
+        rgba(0, 0, 0, 0.25) 9px);
+    background-size: contain, contain;
+    background-position: top right; 
+    /* this positions the second image */
+    background-repeat: repeat, no-repeat;
+}
+
+.hide-desktop {
+    @include mq(medium) {
+        display: none;
+    }
+}

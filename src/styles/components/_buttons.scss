@@ -1,0 +1,20 @@
+/* CREDIT : https://codepen.io/flik185/pen/dXvaza */
+.welcome__button {
+    text-decoration: none;
+    border: 1.5px solid #cb357b;
+    text-shadow: #cb357b 0 0 2.5px;
+    color: #e60a71;
+    -webkit-animation: intermittente 0.01s infinite alternate;
+    animation: intermittente 0.01s infinite alternate;
+    box-shadow: 0px 0px 35px rgba(204, 0, 153, 0.3),
+        0 0 11px rgba(204, 0, 170, 0.3),
+        0 0 2px rgba(255, 0, 221, 0.3),
+        0 0 1px rgba(204, 0, 187, 0.3),
+        0 0px 17px rgba(204, 0, 119, 0.3), inset 0px 0 17px rgba(204, 0, 95, 0.3), inset 0px 0 30px rgba(204, 0, 112, 0.3);
+    width: auto;
+    white-space: pre-wrap;
+    padding: .5rem 2.5rem;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+    border-radius: 2rem;
+}

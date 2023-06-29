@@ -5,27 +5,25 @@
     <!-- meta tags requises -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="viewport" content="width=device-width" />
     <meta name="description"
         content="Neon's Trails est un jeu vidéo rythmique, mélangeant les mécanismes de Guitar Hero et Suwbay Surfers. Le joueur incarne Neon, un des derniers être humain doté d’un esprit créatif dans une société où l’art et la culture ont été interdit au bénéfice de la productivité. Après s’être fait repéré par la police alors qu’il jouait de la musique dans le métro, le but du joueur est donc d’échapper à cette dernière en fuyant par les rails du métro.">
     <meta property="og:title" content="Neon's Trails : à la poursuite du rythme" />
     <meta property="og:type" content="Jeu" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
-    <link rel="apple-touch-icon" href="css/img/favicon.ico">
+    <!-- <meta property="og:url" content="" /> -->
+    <!-- <meta property="og:image" content="" /> -->
+    <!-- <link rel="apple-touch-icon" href=""> -->
 
 
     <title>Neon's Trails : à la poursuite du rythme</title>
     <!-- polices -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,800&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="css/img/favicon.ico" />
-    <link rel="stylesheet" href="dist/main.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    <script src="js/wow.min.js"></script>
+    <!-- <link rel="shortcut icon" href="" /> -->
+    <link rel="stylesheet" href="src/styles/main.scss">
 </head>
 
 <body>
-    <section class="loading-screen">
+    <div class="overlay"></div>
+    <div class="loading-screen">
         <div class="loading-screen__svg">
             <div></div>
             <div></div>
@@ -33,7 +31,11 @@
             <div></div>
         </div>
         <p class="loading-screen__text">En chargement</p>
-    </section>
+    </div>
+    <picture class="background">
+        <source srcset="src/assets/img/background_mob.webp" media="(max-width:1023px)">
+        <img src="src/assets/img/background_desk.webp" alt="">
+    </picture>
     <header>
         <nav class="navbar">
             <ul>
@@ -43,21 +45,34 @@
             </ul>
         </nav>
         <input type="checkbox" id="burger-toggle">
-        <label for="burger-toggle" class="burger-icon">&#9776;</label>
+        <div class="burger-wrapper">
+            <label for="burger-toggle" class="burger-icon">&#9776;</label>
+        </div>
         <nav class="burger-menu">
+            <label for="burger-toggle" class="close-icon">&times;</label>
             <ul>
-                <li><a href="#">Jeu</a></li>
-                <li><a href="#">Équipe</a></li>
-                <li><a href="#">Contact</a></li>
+                <li>
+                    <a class="burger-menu__link" href="#">Jeu</a>
+                </li>
+                <li>
+                    <a class="burger-menu__link" href="#">Équipe</a>
+                </li>
+                <li>
+                    <a class="burger-menu__link" href="#">Contact</a>
+                </li>
             </ul>
         </nav>
         <div class="welcome">
-            <h1>Neon's Trails</h1>
-            <h2>À la poursuite du rythme</h2>
-            <a class="btn" id="neon-text">Regarder le trailer</a>
+            <div class="welcome__description">
+                <h1>Neon's Trails</h1>
+                <h2>À la poursuite<br class="hide-desktop" /> du rythme</h2>
+            </div>
+            <a class="welcome__button" id="neon-text">Regarder le trailer</a>
         </div>
     </header>
-    <script src="js/script.js"></script>
+    <script src="src/js/script.js"></script>
+    <script src="src/js/wow.min.js"></script>
+    <script>new WOW().init();</script>
 </body>
 
 

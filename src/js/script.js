@@ -7,18 +7,49 @@
 const loadingScreen = document.querySelector('.loading-screen');
 document.body.style.overflow = 'hidden';
 
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
     console.log('loaded !');
     document.body.style.overflow = 'auto';
     loadingScreen.classList.add('loading-screen--hide');
 });
 
 /**
- * Init WOW js for the animation on scroll
+ * Handle clicks on the navbar only on mobile, to hide the navbar
  */
 
+// getting all the links and foreach link, if it's clicked the navbar is unchecked
+const allLinksNavbar = document.querySelectorAll('.burger-menu__link');
+const navChecked = document.querySelector('#burger-toggle');
+const navDisplay = document.querySelector('.burger-menu');
+const burgerButton = document.querySelector('.burger-wrapper');
+const closeButton = document.querySelector('.close-icon');
 
-new WOW().init();
+burgerButton.addEventListener('click', () => {
+    document.body.style.overflow = 'hidden';
+    navChecked.checked = true;
+    navDisplay.classList.add('checked');
+    navDisplay.style.opacity = '1';
+    closeButton.style.display = 'flex';
+})
+fadeOut(closeButton);
+allLinksNavbar.forEach((link) => {
+    fadeOut(link);
+})
+
+function fadeOut(elementClicked) {
+    elementClicked.addEventListener('click', () => {
+        if(navDisplay.classList.contains('checked')) {
+            document.body.style.overflow = 'auto';
+            navChecked.checked = false;
+            navDisplay.style.opacity = '0';
+            setTimeout(() => {
+                navDisplay.classList.remove('checked');
+                closeButton.style.display = 'none';
+            }, 250)
+            
+        }
+    })
+}
 
 
 // disable the scroll event for the time the loading is done

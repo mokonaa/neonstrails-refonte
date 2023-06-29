@@ -1,0 +1,29 @@
+@use "../typography/fonts" as *;
+@use "../abstracts/colors" as *;
+@use "../functions/breakpoints" as *;
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+h1 {
+    font-family: 'Road Rage';
+    color: $neon-yellow;
+    text-transform: uppercase;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    letter-spacing: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    color: $neon-blue;
+    text-shadow: 0 0 5px $shadow-blue;
+    font-family: 'Athens';
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    letter-spacing: .5rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+}
