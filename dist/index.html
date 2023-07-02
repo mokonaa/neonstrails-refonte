@@ -21,7 +21,6 @@
 </head>
 
 <body>
-    <div class="overlay"></div>
     <div class="loading-screen">
         <div class="loading-screen__svg">
             <div></div>
@@ -31,6 +30,7 @@
         </div>
         <p class="loading-screen__text">En chargement</p>
     </div>
+    <div class="overlay"></div>
     <picture class="background">
         <source srcset="/background_mob.31756152.webp" media="(max-width:1023px)">
         <img src="/background_desk.b204248f.webp" alt="">
@@ -64,11 +64,21 @@
         <div class="welcome">
             <div class="welcome__description">
                 <h1>Neon's Trails</h1>
-                <h2>À la poursuite<br class="hide-desktop"> du rythme</h2>
+                <h2>À la poursuite du rythme</h2>
             </div>
             <a class="welcome__button" id="neon-text">Regarder le trailer</a>
+            <dialog class="welcome__modal">
+                <div class="modal__content">
+                    <span class="welcome__button--close">&times;</span>
+                    <iframe width="560" height="349" src="https://www.youtube.com/embed/93rVm1bjURY" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                </div>
+            </dialog>
         </div>
     </header>
+
+
+
+
     <script src="/index.09c24910.js"></script>
     <script src="/index.94f79576.js"></script>
     <script>new WOW().init();

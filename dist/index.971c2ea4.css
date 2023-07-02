@@ -1666,7 +1666,6 @@ body {
 }
 
 .loading-screen {
-  z-index: 10;
   background: #000;
   flex-direction: column;
   justify-content: center;
@@ -1676,6 +1675,7 @@ body {
   transition: opacity .3s ease-in;
   display: flex;
   overflow: hidden;
+  z-index: 20 !important;
 }
 
 .loading-screen.loading-screen--hide {
@@ -1769,6 +1769,7 @@ header {
 }
 
 .burger-icon {
+  z-index: 3;
   color: #fff;
   cursor: pointer;
   font-size: 3.5rem;
@@ -1933,6 +1934,7 @@ h1 {
   color: #dfdb0e;
   text-transform: uppercase;
   letter-spacing: 1rem;
+  text-wrap: balance;
   margin-bottom: 1.5rem;
   font-family: Road Rage;
   font-size: 3rem;
@@ -1944,6 +1946,7 @@ h2 {
   text-shadow: 0 0 5px #16a1f1;
   letter-spacing: .5rem;
   text-transform: uppercase;
+  text-wrap: balance;
   margin-bottom: 2rem;
   font-family: Athens;
   font-size: 1.5rem;
