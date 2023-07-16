@@ -14,12 +14,15 @@ window.addEventListener("load", ()=>{
  */ // getting all the links and foreach link, if it's clicked the navbar is unchecked
 const allLinksNavbar = document.querySelectorAll(".burger-menu__link");
 const navChecked = document.querySelector("#burger-toggle");
+const burgerIcon = document.querySelector(".burger-wrapper");
 const navDisplay = document.querySelector(".burger-menu");
 const closeButton = document.querySelector(".close-icon");
 burgerButton.addEventListener("click", ()=>{
     document.body.style.overflow = "hidden";
     navChecked.checked = true;
+    burgerIcon.style.display = "none";
     navDisplay.classList.add("checked");
+    burgerIcon.style.display = "none";
     navDisplay.style.opacity = "1";
     closeButton.style.display = "flex";
 });
@@ -33,6 +36,7 @@ function fadeOut(elementClicked) {
             document.body.style.overflow = "auto";
             navChecked.checked = false;
             navDisplay.style.opacity = "0";
+            burgerIcon.style.display = "flex";
             setTimeout(()=>{
                 navDisplay.classList.remove("checked");
                 closeButton.style.display = "none";
